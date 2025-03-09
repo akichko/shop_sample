@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品詳細</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .product-detail {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            color: #666;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .product-info {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .add-to-cart {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-detail">
+        <div class="header">
+            <h2>商品詳細</h2>
+            <div>
+                <a href="/products" class="back-link">商品一覧に戻る</a>
+                <a href="/logout" class="logout">ログアウト</a>
+            </div>
+        </div>
+        <div class="product-info">
+            <h3>{{name}}</h3>
+            <p>価格: ¥{{price}}</p>
+            <p>説明: {{description}}</p>
+            <p>在庫数: {{stock}}</p>
+            <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="product_id" value="{{id}}">
+                <button type="submit" class="add-to-cart">カートに追加</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

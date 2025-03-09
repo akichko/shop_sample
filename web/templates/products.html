@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品一覧</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .products { 
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .products th, .products td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .products th {
+            background-color: #f5f5f5;
+        }
+        .logout { 
+            padding: 8px 15px;
+            background-color: #f44336;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>商品一覧</h2>
+        <a href="/logout" class="logout">ログアウト</a>
+    </div>
+    <table class="products">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>商品名</th>
+                <th>価格</th>
+                <th>説明</th>
+                <th>在庫</th>
+            </tr>
+        </thead>
+        <tbody>
+            {products}
+        </tbody>
+    </table>
+</body>
+</html>
