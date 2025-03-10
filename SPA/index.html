@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping SPA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="titlebar">
+        <h1>ショッピングサイト</h1>
+        <button id="cart-button" onclick="showCart()" style="display: none;">
+            カートを見る (<span id="cart-count">0</span>)
+        </button>
+    </div>
+    <div id="app">
+        <div id="login-page">
+            <h2>ログイン</h2>
+            <input type="text" id="username" placeholder="ユーザー名">
+            <input type="password" id="password" placeholder="パスワード">
+            <button onclick="login()">ログイン</button>
+        </div>
+        <div id="products-page" style="display: none;">
+            <h2>商品一覧</h2>
+            <div id="products-container"></div>
+        </div>
+        <div id="product-detail-page" style="display: none;">
+            <button onclick="backToProducts()">← 戻る</button>
+            <div id="product-detail-container"></div>
+        </div>
+        <div id="cart-page" style="display: none;">
+            <button onclick="backToProducts()">← 戻る</button>
+            <h2>カート内商品</h2>
+            <div id="cart-container"></div>
+            <div id="cart-total"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
